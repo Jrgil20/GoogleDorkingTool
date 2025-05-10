@@ -10,6 +10,7 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/comp
 import { Badge } from "@/components/ui/badge"
 import { Alert, AlertDescription } from "@/components/ui/alert"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import { EthicalWarning } from "./components/ethical-warning"
 
 // Importar tipos y servicios
 import type { DorkCategory } from "./lib/types"
@@ -28,6 +29,9 @@ export default function GoogleDorkingTool() {
   const [dorkCategories, setDorkCategories] = useState<DorkCategory[]>([])
   const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
+
+  // Estado para mostrar advertencia ética
+  const [showEthicalWarning, setShowEthicalWarning] = useState(false)
 
   // Cargar las categorías de dorks al montar el componente
   useEffect(() => {
@@ -70,6 +74,7 @@ export default function GoogleDorkingTool() {
   // Actualizar la consulta cuando cambian los operadores o palabras clave
   const updateQuery = () => {
     setQuery(buildQuery())
+    setShowEthicalWarning(true) // Mostrar advertencia al generar nueva consulta
   }
 
   // Manejar cambios en los valores de los operadores
@@ -301,16 +306,22 @@ export default function GoogleDorkingTool() {
               </div>
             </div>
           </CardContent>
-          <CardFooter className="flex justify-between">
-            <Button variant="outline" onClick={copyToClipboard} disabled={!query}>
-              <Copy className="h-4 w-4 mr-2" />
-              Copiar
-            </Button>
-            <Button onClick={searchInGoogle} disabled={!query}>
-              <Search className="h-4 w-4 mr-2" />
-              Buscar en Google
-              <ExternalLink className="h-4 w-4 ml-2" />
-            </Button>
+          <CardFooter className="flex flex-col items-stretch gap-2">
+            <div className="flex justify-between">
+              <Button variant="outline" onClick={copyToClipboard} disabled={!query}>
+                <Copy className="h-4 w-4 mr-2" />
+                Copiar
+              </Button>
+              <Button onClick={searchInGoogle} disabled={!query}>
+                <Search className="h-4 w-4 mr-2" />
+                Buscar en Google
+                <ExternalLink className="h-4 w-4 ml-2" />
+              </Button>
+            </div>
+            {/* Advertencia ética solo si hay consulta y showEthicalWarning es true */}
+            {query && showEthicalWarning && (
+              <EthicalWarning key={query} />
+            )}
           </CardFooter>
         </Card>
       </div>
