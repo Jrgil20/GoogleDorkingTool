@@ -2,6 +2,8 @@
 
 ![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/Jrgil20/GoogleDorkingTool)
+
 
 Una herramienta interactiva para construir, gestionar y ejecutar consultas de Google Dorking de manera segura y educativa. Diseñada para profesionales de seguridad informática, investigadores OSINT y administradores de sistemas.
 
@@ -111,4 +113,4 @@ Este proyecto está licenciado bajo la Licencia MIT - ver el archivo [LICENSE](L
 
 ---
 
-Desarrollado con ❤️ por v0
+Desarrollado con ❤️ por Jesus Gil, v0 y cursor.
