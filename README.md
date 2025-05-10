@@ -32,7 +32,7 @@ Google Dorking (también conocido como Google Hacking) es una técnica que utili
 
 ## 🚀 Instalación
 
-\`\`\`bash
+```bash
 # Clonar el repositorio
 git clone https://github.com/yourusername/google-dorking-tool.git
 
@@ -44,7 +44,7 @@ npm install
 
 # Iniciar el servidor de desarrollo
 npm run dev
-\`\`\`
+```
 
 ## 🎮 Uso Rápido
 
@@ -53,7 +53,7 @@ npm run dev
 3. Visualiza la consulta generada en tiempo real
 4. Copia la consulta o ejecútala directamente en Google
 
-\`\`\`
+```
 +-----------------------------------------------+
 |  Herramienta de Google Dorking                |
 +-----------------------------------------------+
@@ -75,7 +75,7 @@ npm run dev
 |  +-------------------+  +-------------------+ |
 |                                               |
 +-----------------------------------------------+
-\`\`\`
+```
 
 ## 📚 Documentación
 
